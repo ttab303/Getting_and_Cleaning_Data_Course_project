@@ -14,6 +14,7 @@ download.file(fileUrl,destfile)
 # Unzip the dataset
 unzip(zipfile=destfile, exdir=path_dir)
 
+# 1. Merge the training and the test sets to create one data set.
 # Setting the working directory
 setwd("C:/Users/Joseph Teo Chun Yong/Documents/project/UCI HAR Dataset")
 
@@ -39,9 +40,12 @@ colnames(yTrain)        = "activityId"
 trainingData = cbind(yTrain,subjectTrain,xTrain)
 
 # Read in the test data
-subjectTest = read.table('./test/subject_test.txt',header=FALSE) #imports subject_test.txt
-xTest       = read.table('./test/x_test.txt',header=FALSE) #imports x_test.txt
-yTest       = read.table('./test/y_test.txt',header=FALSE) #imports y_test.txt
+#imports subject_test.txt
+subjectTest = read.table('./test/subject_test.txt',header=FALSE) 
+#imports x_test.txt
+xTest       = read.table('./test/x_test.txt',header=FALSE) 
+#imports y_test.txt
+yTest       = read.table('./test/y_test.txt',header=FALSE) 
 
 # Assign column names to the test data imported above
 colnames(subjectTest) = "subjectId"
